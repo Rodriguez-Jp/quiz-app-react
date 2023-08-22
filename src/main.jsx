@@ -1,10 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import QuizInfoContextProvider from "./context/QuizInfoContext";
 import Root from "./routes/root";
 import ErrorPage from "./ErrorPage";
 import About from "./routes/about";
 import Index from "./routes/Index";
+import Form from "./routes/Form";
 import Play from "./routes/Play";
 import "./index.css";
 
@@ -23,6 +25,10 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
+        path: "/form",
+        element: <Form />,
+      },
+      {
         path: "/play",
         element: <Play />,
       },
@@ -32,6 +38,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QuizInfoContextProvider>
+      <RouterProvider router={router} />
+    </QuizInfoContextProvider>
   </React.StrictMode>
 );

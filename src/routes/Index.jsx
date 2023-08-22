@@ -19,7 +19,7 @@ export default function Index() {
           We have Quizes in all this categories :D
         </h1>
         <Link
-          to={"play"}
+          to={"form"}
           className="bg-customBlue p-2 rounded-lg text-lg font-semibold text-white hover:scale-105 transition-transform duration-200"
         >
           Play now
