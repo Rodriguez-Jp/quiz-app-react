@@ -16,7 +16,7 @@ export default function Index() {
       </div>
       <div className=" mx-auto text-center mt-5 max-w-5xl">
         <h1 className="text-2xl font-light mb-5">
-          We have Quizes in all this categories :D
+          We have Quizes in all these categories :D
         </h1>
         <Link
           to={"form"}

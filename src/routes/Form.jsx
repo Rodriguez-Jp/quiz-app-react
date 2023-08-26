@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import SelectCategory from "../components/SelectCategory";
 import Difficulty from "../components/Difficulty";
 import TypeOfQuestion from "../components/TypeOfQuestion";
@@ -7,6 +7,7 @@ import { QuizInfoContext } from "../context/QuizInfoContext";
 
 export default function Form() {
   const { formData, setFormData } = useContext(QuizInfoContext);
+  const navigate = useNavigate();
 
   const [page, setPage] = useState(0);
 
@@ -31,7 +32,8 @@ export default function Form() {
     setPage(page + 1);
 
     if (page >= 2) {
-      return redirect("/play");
+      navigate("/play");
+      return;
     } else if (page < 0) {
       setPage(2);
     }
