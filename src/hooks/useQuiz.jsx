@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { QuizInfoContext } from "../context/QuizInfoContext";
 
-export default function useCategories() {
+export default function useQuiz() {
   const {
     formData: { category, difficulty, typeOfQuestion },
     setFormData,
