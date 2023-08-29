@@ -16,6 +16,7 @@ export default function SelectCategory({ formData, setFormData }) {
         id="category"
         className=" p-2 rounded-lg text-xl border "
       >
+        {/* <option value="9">Select an option</option> */}
         {categories.map((category) => (
           <option value={category.id} key={category.id}>
             {category.name}
