@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { QuizInfoContext } from "../context/QuizInfoContext";
+import decodeHTMLEntities from "../helpers/decodeHTMLentities";
 
 export default function useQuiz() {
   const {
@@ -14,13 +15,17 @@ export default function useQuiz() {
       try {
         const response = await fetch(url);
         const result = await response.json();
+
         //Transform the array into a easy format
         const quizArr = result.results.reduce(
           (acc, state) => [
             ...acc,
             {
-              ["question"]: state.question,
-              ["answers"]: [...state.incorrect_answers, state.correct_answer],
+              ["question"]: decodeHTMLEntities(state.question),
+              ["answers"]: [
+                ...state.incorrect_answers,
+                decodeHTMLEntities(state.correct_answer),
+              ],
               ["correct_answer"]: state.correct_answer,
               ["id"]: crypto.randomUUID(),
             },
