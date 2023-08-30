@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useCategories } from "../hooks/useCategories";
 import Category from "../components/Category";

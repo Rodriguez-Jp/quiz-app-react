@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import QuizInfoContextProvider from "./context/QuizInfoContext";
+import QuizScoreContextProvider from "./context/QuizScoreContext";
 import Root from "./routes/root";
 import ErrorPage from "./ErrorPage";
 import About from "./routes/about";
@@ -38,8 +39,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <QuizInfoContextProvider>
-      <RouterProvider router={router} />
-    </QuizInfoContextProvider>
+    <QuizScoreContextProvider>
+      <QuizInfoContextProvider>
+        <RouterProvider router={router} />
+      </QuizInfoContextProvider>
+    </QuizScoreContextProvider>
   </React.StrictMode>
 );
