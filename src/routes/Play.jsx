@@ -23,7 +23,6 @@ export default function Play() {
   const checkAnswer = (answer) => {
     console.log(quiz[actualQuestion].correct_answer);
     if (answer === quiz[actualQuestion].correct_answer) {
-      alert("Correct!");
       setScore(score + 10);
     }
   };
