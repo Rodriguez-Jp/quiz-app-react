@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import useQuiz from "../hooks/useQuiz";
 import { QuizScoreContext } from "../context/QuizScoreContext";
 import NoQuestionsFound from "../components/NoQuestionsFound";
-import ScoreBoard from "../components/ScoreBoard";
+import Score from "../components/Score";
 import QuizQuestions from "../components/QuizQuestions";
 
 export default function Play() {
@@ -32,7 +32,7 @@ export default function Play() {
       {!quiz.length ? (
         <NoQuestionsFound />
       ) : isFinished ? (
-        <ScoreBoard />
+        <Score />
       ) : (
         <QuizQuestions
           quiz={quiz}

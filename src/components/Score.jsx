@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { QuizScoreContext } from "../context/QuizScoreContext";
 
-export default function ScoreBoard() {
+export default function Score() {
   const { score, setScore } = useContext(QuizScoreContext);
   const navigate = useNavigate();
 

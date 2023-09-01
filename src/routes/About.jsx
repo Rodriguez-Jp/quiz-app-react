@@ -15,7 +15,7 @@ export default function About() {
       <div
         className={`absolute w-full h-full -z-10 origin-top-left inset-0 bg-slate-900 ${
           loaded ? "skew-y-[-16deg]" : ""
-        } transition-transform duration-1000`}
+        } transition-transform duration-[500ms]`}
       ></div>
       <div className="max-w-3xl mx-auto text-white mt-20">
         <h1 className="font-extrabold text-4xl ">About the developer</h1>
@@ -23,9 +23,9 @@ export default function About() {
           Hello, my name is{" "}
           <span className="text-2xl font-bold text-cyan-500">Juan Pablo!</span>
         </h2>
-        <p className="text-lg mt-2">
+        <p className="text-xl mt-2 font-thin">
           I'm the developer of this beatiful game, if you liked you can give it
-          an star in gitub or watch the entire repo by clicking the cat!
+          an star in GitHub or watch the entire repo by clicking the cat!
         </p>
         <div className="w-full flex justify-center">
           <a
